@@ -1,6 +1,6 @@
 {
-	"short_name": "Boop!",
-	"name": "Mastodon notification sound at random intervals 10 hours ASMR",
+	"short_name": "pope",
+	"name": "Misskey notification sound at random intervals 10 hours ASMR",
 	"icons": [
 		{
 			"src": "logo-192.png",
@@ -18,9 +18,9 @@
 			"sizes": "any"
 		}
 	],
-	"start_url": "/mstdn/boop.html",
-	"background_color": "#282c37",
-	"theme_color": "#282c37",
+	"start_url": "/mskypope/pope.html",
+	"background_color": "#232323",
+	"theme_color": "#232323",
 	"display": "standalone",
-	"scope": "/mstdn/boop.html"
+	"scope": "/mskypope/pope.html"
 }

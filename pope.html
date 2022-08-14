@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <link rel="icon" href="logo-192.png" type="image/png">
-<title>Mastodon notification sound at random intervals 10 hours ASMR</title>
+<title>Misskey notification sound at random intervals 10 hours ASMR</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="manifest" href="boop-manifest.json">
+<link rel="manifest" href="pope-manifest.json">
 <meta name="theme-color" content="#282c37">
 <style>
 html {
@@ -31,25 +31,25 @@ html {
 	cursor: unset;
 	pointer-events: none;
 }
-.logo.active.boop {
+.logo.active.pope {
 	opacity: 0.75;
 	transition: 0s opacity;
 }
 </style>
 </head>
 <body>
-<audio id="boop" preload>
-<source src="boop.ogg" type="audio/ogg; codecs=vorbis">
-<source src="boop.mp3" type="audio/mpeg">
+<audio id="pope" preload>
+<source src="media/pope2.ogg" type="audio/ogg; codecs=vorbis">
+<source src="media/pope2.mp3" type="audio/mpeg">
 </audio>
 <img src="logo.svg" id="first-logo" class="logo">
 <script>
-var boop = document.getElementById("boop");
+var pope = document.getElementById("pope");
 var logo = document.getElementById("first-logo");
 if (/bean/.test(location.search)) {
 	logo.src = "beanskull.png";
-	boop.querySelectorAll("source").forEach(function(s) {
-		s.src = s.src.replace(/boop/, "honk");
+	pope.querySelectorAll("source").forEach(function(s) {
+		s.src = s.src.replace(/pope/, "honk");
 	});
 }
 logo.addEventListener("click", function() {
@@ -69,12 +69,12 @@ logo.addEventListener("click", function() {
 }, {once: true});
 
 function setupLogo(logo) {
-	var myBoop = boop.cloneNode(true);
-	document.body.append(myBoop);
+	var mypope = pope.cloneNode(true);
+	document.body.append(mypope);
 	logo.classList.add("active");
 
 	// always play during a trusted event handler the first time
-	myBoop.play();
+	mypope.play();
 
 	setInterval(function() {
 		if (Math.random() > 0.1) {
@@ -82,18 +82,18 @@ function setupLogo(logo) {
 		}
 
 		document.body.appendChild(logo);
-		logo.classList.add("boop");
-		myBoop.play();
+		logo.classList.add("pope");
+		mypope.play();
 
 		setTimeout(function() {
-			logo.classList.remove("boop");
+			logo.classList.remove("pope");
 		}, 10);
 	}, 250);
 }
 </script>
 <script>
-navigator.serviceWorker.register('boop-sw.js', {
-	scope: '/mstdn/boop.html'
+navigator.serviceWorker.register('pope-sw.js', {
+	scope: '/mskypope/pope.html'
 });
 </script>
 </body>

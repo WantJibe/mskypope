@@ -3,19 +3,19 @@
 const version = 2;
 
 self.addEventListener('install', function(event) {
-	event.waitUntil(caches.open('mstdn-boop-v2').then(function(cache) {
+	event.waitUntil(caches.open('msky-pope-v2').then(function(cache) {
 		return cache.addAll([
-			'boop.html',
-			'boop.html?bean',
+			'pope.html',
+			'pope.html?bean',
 			'logo.svg',
 			'logo-192.png',
 			'logo-512.png',
-			'boop.mp3',
-			'boop.ogg',
+			'media/pope2.mp3',
+			'media/pope2.ogg',
 			'beanskull.png',
 			'honk.mp3',
 			'honk.ogg',
-			'boop-manifest.json'
+			'pope-manifest.json'
 		]);
 	}));
 });
