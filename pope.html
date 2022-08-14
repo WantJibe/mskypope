@@ -46,11 +46,29 @@ html {
 <script>
 var pope = document.getElementById("pope");
 var logo = document.getElementById("first-logo");
+const urlParams = new URLSearchParams(window.location.search);
+const audios = [
+	'pope1',
+	'pope2',
+	'down',
+	'up',
+];
+
 if (/bean/.test(location.search)) {
 	logo.src = "beanskull.png";
 	pope.querySelectorAll("source").forEach(function(s) {
-		s.src = s.src.replace(/pope/, "honk");
+		s.src = s.src.replace(/pope2/, "honk");
 	});
+} else {
+	urlParams.forEach( (_, key) => {
+		if (audios.includes(key)) {
+			// only last param will affect
+			pope.querySelectorAll("source").forEach(function(s) {
+				s.src = s.src.replace(/pope2/, key);
+			});
+		}
+	});
+
 }
 logo.addEventListener("click", function() {
 	setupLogo(logo);
